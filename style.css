@@ -1,0 +1,189 @@
+:root{
+  --bg: #0b0c0f;        /* deep black */
+  --panel: #121318;     /* dark panel */
+  --line: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.65);
+
+  --pill: #f2f2f2;      /* white button */
+  --pillText: #111;
+
+  --radius: 26px;
+  --shadow: 0 18px 50px rgba(0,0,0,.55);
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.08), transparent 42%),
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,.06), transparent 40%),
+    linear-gradient(180deg, #0a0b0e, var(--bg));
+  color: var(--text);
+}
+
+.phone{
+  width: min(420px, 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle sparkle overlay */
+.stars{
+  position:absolute;
+  inset:-50px;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(255,255,255,.20), transparent 10px),
+    radial-gradient(circle at 78% 18%, rgba(255,255,255,.18), transparent 9px),
+    radial-gradient(circle at 65% 55%, rgba(255,255,255,.14), transparent 10px),
+    radial-gradient(circle at 30% 70%, rgba(255,255,255,.12), transparent 12px);
+  filter: blur(.2px);
+  opacity:.55;
+  pointer-events:none;
+}
+
+.top{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding: 8px 8px 14px;
+}
+
+.pfp{
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 3px solid rgba(255,255,255,.85);
+  box-shadow: 0 16px 35px rgba(0,0,0,.6);
+}
+
+.name{
+  margin:0;
+  letter-spacing: .14em;
+  font-size: 1.05rem;
+}
+
+.bio{
+  margin:0;
+  color: var(--muted);
+  font-size: .92rem;
+  text-align:center;
+}
+
+.buttons{
+  position:relative;
+  display:grid;
+  gap: 12px;
+  padding: 4px 10px 12px;
+}
+
+.btn{
+  text-decoration:none;
+  text-align:center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: var(--pill);
+  color: var(--pillText);
+  font-weight: 700;
+  letter-spacing: .02em;
+
+  border: 1px solid rgba(0,0,0,.08);
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(0.96);
+}
+
+.btn:active{
+  transform: translateY(0px) scale(0.99);
+}
+
+.bottom{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.icons{
+  display:flex;
+  gap: 10px;
+}
+
+.icon{
+  width: 34px;
+  height: 34px;
+  display:grid;
+  place-items:center;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  text-decoration:none;
+  font-size: .75rem;
+  letter-spacing:.04em;
+}
+
+.copy{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor:pointer;
+}
+
+.copy:hover{
+  background: rgba(255,255,255,.10);
+}
+
+.msg{
+  margin:0;
+  min-height: 1.1em;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+.icons{
+  display:flex;
+  justify-content:center;   /* centers the whole row */
+  align-items:center;
+  gap: 10px;
+  width: 100%;
+}
+
+.icon{
+  width: 36px;
+  height: 36px;
+  display:grid;
+  place-items:center;       /* centers the SVG inside the circle */
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  text-decoration:none;
+}
+
+.ico-mini{
+  width: 18px;
+  height: 18px;
+  fill: rgba(255,255,255,.80);
+  display:block;            /* prevents weird inline spacing */
+}
